@@ -1,4 +1,3 @@
-
 # BVAP and Membership in the Congressional Black Caucus
 
 In this notebook, we explore the relationship between the Black Voting Age Population (BVAP) of a congressional district and whether or not that district is represented by a member of the Congressional Black Caucus.
@@ -15,18 +14,15 @@ The `tidy.py` script extracts the relevant data from `CD.csv` to `cvap.csv` and 
 
 As our final data manipulation step, we join the CBC membership data in `cbc.csv` with the demographic data in `cvap.csv` to produce `data.csv`.
 
-
 ```python
 import pandas
 import matplotlib.pyplot
 ```
 
-
 ```python
 cbc = pandas.read_csv("./cbc.csv")
 cvap = pandas.read_csv("./cvap.csv")
 ```
-
 
 ```python
 cbc_geoids = set(cbc["GEOID"])
@@ -38,7 +34,6 @@ cvap.to_csv("./data.csv")
 
 ## Plots
 
-
 ```python
 bvap_cbc_df = pandas.DataFrame({
     "Rep in CBC": cvap[cvap["is_in_cbc"]]["bvap_pct"],
@@ -46,24 +41,15 @@ bvap_cbc_df = pandas.DataFrame({
 })
 ```
 
-
 ```python
 plot = bvap_cbc_df.plot.hist(stacked=True)
 plot.set_xlabel("BVAP%")
 plot.set_title("BVAP% by CBC Membership")
 ```
 
-
-
-
     Text(0.5,1,'BVAP% by CBC Membership')
 
-
-
-
 ![png](output_8_1.png)
-
-
 
 ```python
 black_pct_df = pandas.DataFrame({
@@ -76,29 +62,18 @@ plot.set_xlabel("Black Population %")
 plot.set_title("Black Population by CBC Membership")
 ```
 
-
-
-
     Text(0.5,1,'Black Population by CBC Membership')
 
-
-
-
 ![png](output_9_1.png)
-
 
 ## Districts with BVAP > 37%
 
 The 37% BVAP level is an important cutoff point in this dataset. 91.4% of congressional districts with a BVAP of 37% or greater is represented by a member of the Congressional Black Caucus.
 
-
 ```python
 high_bvap = cvap[cvap["bvap_pct"] >= 0.37]
 high_bvap
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -113,6 +88,7 @@ high_bvap
     .dataframe thead th {
         text-align: right;
     }
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -554,13 +530,13 @@ high_bvap
 </table>
 </div>
 
-
-
-
 ```python
 percent_in_cbc = sum(high_bvap["is_in_cbc"]) / len(high_bvap)
 print(percent_in_cbc)
 ```
 
     0.9142857142857143
-    
+
+---
+
+_The products of this project should be considered public and freely shareable. Please cite this repo and credit the Metric Geometry and Gerrymandering Group._
