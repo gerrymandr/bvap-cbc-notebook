@@ -34,7 +34,7 @@ def tidy_cd_data():
 
 
 def assign_geoids_to_cbc_data():
-    df = pandas.read_csv("./cbc.csv")
+    df = pandas.read_csv("./raw/cbc.csv")
     df["GEOID"] = df["cd"].apply(parse_geoid)
     tidy_df = df.set_index("GEOID")
     tidy_df.to_csv("./cbc.csv")
