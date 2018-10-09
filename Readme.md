@@ -6,6 +6,8 @@ Data on Citizen Voting Age Population is drawn from [the 2012-2016 American Comm
 
 Data on Congressional Black Caucus membership (`cbc.csv`) was parsed from the [Wikipedia article](https://en.wikipedia.org/wiki/Congressional_Black_Caucus#Membership) for the Congressional Black Caucus (accessed 10/9/2018). We added Rep. John Conyers (who represented Michigan's 13th Congressional District until 2017) to the dataset to reflect the Caucus's membership after the 2016 election.
 
+The joined dataset containing both the district demographic data and CBC membership status is in `data.csv`.
+
 You can view the notebook [here](https://github.com/gerrymandr/bvap-cbc-notebook/blob/master/BVAP_and_CBC.ipynb).
 
 ---
