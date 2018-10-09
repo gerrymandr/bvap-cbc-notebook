@@ -49,7 +49,7 @@ plot.set_title("BVAP% by CBC Membership")
 
     Text(0.5,1,'BVAP% by CBC Membership')
 
-![png](output_8_1.png)
+![png](plots/output_8_1.png)
 
 ```python
 black_pct_df = pandas.DataFrame({
@@ -64,7 +64,7 @@ plot.set_title("Black Population by CBC Membership")
 
     Text(0.5,1,'Black Population by CBC Membership')
 
-![png](output_9_1.png)
+![png](plots/output_9_1.png)
 
 ## Districts with BVAP > 37%
 
